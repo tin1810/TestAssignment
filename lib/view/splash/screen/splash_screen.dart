@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,18 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SvgPicture.asset("assets/images/splash_image.svg"),
-            SizedBox(
-              height: 30,
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset("assets/images/splash_image.svg"),
             ),
-            Text(
-              "UMG Interview App",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500),
-            ),
+        
           ],
         ),
       )),
