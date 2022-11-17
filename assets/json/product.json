@@ -1,0 +1,100 @@
+[
+    {
+        "id" :0,
+        "name":"shirt",
+         "image":"assets/images/shirt.png",
+        "code" :"000"
+    },
+    {
+        "id" :1,
+        "name":"Sneaker",
+         "image":"assets/images/men's shoe.png",
+        "code" :"001"
+    },
+    {
+        "id" :2,
+        "name":"Necktie", 
+        "image":"assets/images/necktie.png",
+        "code" :"002"
+    },{
+        "id" :3,
+        "name":"Blouse", "image":"assets/images/blouse.png",
+        "code" :"010"
+    },
+    {
+        "id" :4,
+        "name":"Skincare", "image":"assets/images/skincare.png",
+        "code" :"011"
+    },
+    {
+        "id" :5,
+        "name":"Makeup", "image":"assets/images/makeup.png",
+        "code" :"012"
+    },  {
+        "id" :6,
+        "name":"Sunglasses", "image":"assets/images/sunglasses.png",
+        "code" :"200"
+    },
+    {
+        "id" :7,
+        "name":"Hat", "image":"assets/images/cap.png",
+        "code" :"201"
+    },
+    {
+        "id" :8,
+        "name":"Bracelet", "image":"assets/images/bracelet.png",
+        "code" :"202"
+    },{
+        "id" :9,
+        "name":"Ring",
+        "image":"assets/images/ring.png",
+        "code" :"100"
+    },
+    {
+        "id" :10,
+        "name":"Earring",
+        "image":"assets/images/earrings.png",
+        "code" :"101"
+    },
+    {
+        "id" :11,
+        "name":"Necklace",
+        "image":"assets/images/necklace.png",
+        "code" :"102"
+    },
+    {
+        "id" :12,
+        "name":"DM",
+       "image":"assets/images/dm.png",
+        "code" :"110"
+    },
+    {
+        "id" :13,
+        "name":"MK",
+        "image":"assets/images/mk.png",
+        "code" :"111"
+    },
+    {
+        "id" :14,
+        "name":"AC",
+        "image":"assets/images/ac.png",
+        "code" :"112"
+    }, {
+        "id" :15,
+        "name":"Lilly",
+        "image":"assets/images/lilly.png",
+        "code" :"120"
+    },
+    {
+        "id" :16,
+        "name":"Timberland",
+        "image":"assets/images/timberland.png",
+        "code" :"121"
+    },
+    {
+        "id" :17,
+        "name":"Flipflop",
+        "image":"assets/images/flipflops.png",
+        "code" :"122"
+    }
+]

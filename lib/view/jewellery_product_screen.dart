@@ -1,11 +1,15 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
+import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/view/search_screen.dart';
+import 'package:test_assignment/widget/filter_widget.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
 class JewelleryProductScreen extends StatelessWidget {
@@ -53,7 +57,11 @@ class JewelleryProductScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.list)),
+                            onPressed: () {
+                              shopController.sort1(shopController.product);
+                              // snapshot.data!.reversed.toList();
+                            },
+                            icon: const Icon(Icons.list)),
                       )
                     ],
                   ),
