@@ -1,9 +1,22 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
+import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
+import 'package:test_assignment/view/category2_screen.dart';
+import 'package:test_assignment/view/category_screen.dart';
 
-Widget shopListWidget(ShopController shopController, int index) {
-    return Container(
+Widget shopListWidget(
+    ShopController shopController, int index, ShopModel? tempShop) {
+  return InkWell(
+    onTap: () {
+      if (tempShop?.id == 0) {
+        Get.to(const CategoryScreen());
+      } else if (tempShop?.id == 1) {
+        Get.to(const Category1Screen());
+      }
+    },
+    child: Container(
       margin: const EdgeInsets.only(right: 10, left: 10),
       width: 230,
       decoration: BoxDecoration(
@@ -26,5 +39,6 @@ Widget shopListWidget(ShopController shopController, int index) {
           Text(shopController.shop[index].openingTime.toString()),
         ],
       ),
-    );
-  }
+    ),
+  );
+}

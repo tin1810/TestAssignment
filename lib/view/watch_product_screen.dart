@@ -5,13 +5,11 @@ import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
-
+import 'package:test_assignment/view/search_screen.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
-import 'search_screen.dart';
-
-class AccessoriesProductScreen extends StatelessWidget {
-  const AccessoriesProductScreen({super.key});
+class WatchProductScreen extends StatelessWidget {
+  const WatchProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +48,7 @@ class AccessoriesProductScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 20, bottom: 10, left: 15),
-                        child: titleTextWidget("Accessories's Product Lists"),
+                        child: titleTextWidget("Watch's Product Lists"),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
@@ -69,7 +67,7 @@ class AccessoriesProductScreen extends StatelessWidget {
                     child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: shopController
-                            .shop[0].category![2].productName!.length,
+                            .shop[1].category![1].productName!.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
@@ -86,10 +84,10 @@ class AccessoriesProductScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(shopController.shop[0].category![2]
+                                Image.asset(shopController.shop[1].category![1]
                                     .productName![index].image
                                     .toString()),
-                                Text(shopController.shop[0].category![2]
+                                Text(shopController.shop[1].category![1]
                                     .productName![index].name
                                     .toString()),
                               ],

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
-
 import 'package:test_assignment/view/search_screen.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
@@ -82,9 +79,17 @@ class WomanProductScreen extends StatelessWidget {
                                 color: Colors.white,
                                 border: Border.all(color: backgroundColor),
                                 borderRadius: BorderRadius.circular(10)),
-                            child: Text(shopController
-                                .shop[0].category![1].productName![index].name
-                                .toString()),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset(shopController.shop[0].category![1]
+                                    .productName![index].image
+                                    .toString()),
+                                Text(shopController.shop[0].category![1]
+                                    .productName![index].name
+                                    .toString()),
+                              ],
+                            ),
                           );
                         }),
                   ),

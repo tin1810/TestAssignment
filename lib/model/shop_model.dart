@@ -73,18 +73,24 @@ class Category {
 class ProductName {
   int? id;
   String? name;
+  String? image;
+  String? code;
 
-  ProductName({this.id, this.name});
+  ProductName({this.id, this.name, this.image, this.code});
 
   ProductName.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    image = json['image'];
+    code = json['code'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
+    data['image'] = this.image;
+    data['code'] = this.code;
     return data;
   }
 }

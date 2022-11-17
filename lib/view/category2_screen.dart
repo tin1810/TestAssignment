@@ -7,6 +7,7 @@ import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/view/accessories_product_screen.dart';
 import 'package:test_assignment/view/man_product_screen.dart';
 import 'package:test_assignment/view/woman_product_screen.dart';
+import 'package:test_assignment/widget/category2Widget.dart';
 import 'package:test_assignment/widget/category_widget.dart';
 
 class Category1Screen extends StatelessWidget {
@@ -14,7 +15,7 @@ class Category1Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ShopModel? tempCat;
+    Category? tempCat;
     final shopController = Get.put(ShopController());
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
@@ -22,7 +23,7 @@ class Category1Screen extends StatelessWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
-          "Addidas's Category",
+          "Mango's Category",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -39,11 +40,10 @@ class Category1Screen extends StatelessWidget {
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                     ),
-                    itemCount:  shopController
-                            .shop[0].category!.length,
+                    itemCount: shopController.shop[0].category!.length,
                     itemBuilder: (context, index) {
-                      return CategoryWidget(index,
-                          tempCat = shopController.shop[0].category![index]);
+                      return Category2Widget(index,
+                          tempCat = shopController.shop[1].category![index]);
                     }),
               );
             }

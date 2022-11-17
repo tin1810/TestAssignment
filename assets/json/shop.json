@@ -8,37 +8,48 @@
         "category":[
             {
                 "id":0,
-                "category_name":"Men", "image":"assets/images/man.png",
+                "category_name":"Men",
+                 "image":"assets/images/man.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"shirt"
+                        "name":"shirt",
+                         "image":"assets/images/shirt.png",
+                        "code" :"000"
                     },
                     {
                         "id" :1,
-                        "name":"Sneaker"
+                        "name":"Sneaker",
+                         "image":"assets/images/men's shoe.png",
+                        "code" :"001"
                     },
                     {
-                        "id" :0,
-                        "name":"Necktie"
+                        "id" :2,
+                        "name":"Necktie", 
+                        "image":"assets/images/necktie.png",
+                        "code" :"002"
                     }
                 ]
             }, 
             {
                 "id":1,
-                "category_name":"Woman", "image":"assets/images/woman.png",
+                "category_name":"Woman", 
+                "image":"assets/images/woman.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"Blouse"
+                        "name":"Blouse", "image":"assets/images/blouse.png",
+                        "code" :"010"
                     },
                     {
                         "id" :1,
-                        "name":"Skincare"
+                        "name":"Skincare", "image":"assets/images/skincare.png",
+                        "code" :"011"
                     },
                     {
                         "id" :2,
-                        "name":"Makeup"
+                        "name":"Makeup", "image":"assets/images/makeup.png",
+                        "code" :"012"
                     }
                 ]
 
@@ -46,19 +57,23 @@
             },
              {
                 "id":2,
-                "category_name":"Accessories",  "image":"assets/images/accessories.png",
+                "category_name":"Accessories",  
+                "image":"assets/images/accessories.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"Sunglasses"
+                        "name":"Sunglasses", "image":"assets/images/sunglasses.png",
+                        "code" :"200"
                     },
                     {
                         "id" :1,
-                        "name":"HouseHold_Chore"
+                        "name":"Hat", "image":"assets/images/cap.png",
+                        "code" :"201"
                     },
                     {
                         "id" :2,
-                        "name":"Funiture"
+                        "name":"Bracelet", "image":"assets/images/bracelet.png",
+                        "code" :"202"
                     }
                 ]
                 
@@ -75,57 +90,77 @@
         "category":[
             {
                 "id":0,
-                "category_name":"Jewellery",  "image":"assets/images/accessories.png",
+                "category_name":"Jewellery", 
+                "image":"assets/images/jewelry.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"Ring"
+                        "name":"Ring",
+                        "image":"assets/images/ring.png",
+                        "code" :"100"
                     },
                     {
                         "id" :1,
-                        "name":"Earring"
+                        "name":"Earring",
+                        "image":"assets/images/earrings.png",
+                        "code" :"101"
                     },
                     {
                         "id" :2,
-                        "name":"Necklace"
+                        "name":"Necklace",
+                        "image":"assets/images/necklace.png",
+                        "code" :"102"
                     }
                 ]
                 
             }, 
             {
                 "id":1,
-                "category_name":"Watch",  "image":"assets/images/accessories.png",
+                "category_name":"Watch", 
+                 "image":"assets/images/watch.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"DM"
+                        "name":"DM",
+                       "image":"assets/images/dm.png",
+                        "code" :"110"
                     },
                     {
                         "id" :1,
-                        "name":"MK"
+                        "name":"MK",
+                        "image":"assets/images/mk.png",
+                        "code" :"111"
                     },
                     {
                         "id" :2,
-                        "name":"AC"
+                        "name":"AC",
+                        "image":"assets/images/ac.png",
+                        "code" :"112"
                     }
                 ]
                 
             },
              {
                 "id":2,
-                "category_name":"Shoe",  "image":"assets/images/accessories.png",
+                "category_name":"Shoe",  "image":"assets/images/shoe.png",
                 "product_name" :[
                     {
                         "id" :0,
-                        "name":"Lilly"
+                        "name":"Lilly",
+                        "image":"assets/images/lilly.png",
+                        "code" :"120"
                     },
                     {
                         "id" :1,
-                        "name":"Skincare"
+                        "name":"Timberland",
+                        "image":"assets/images/timberland.png",
+                        "code" :"121"
                     },
                     {
                         "id" :2,
-                        "name":"Makeup"
+                        "name":"Flipflop",
+                        "image":"assets/images/flipflops.png",
+                        "code" :"122"
                     }
                 ]
                 

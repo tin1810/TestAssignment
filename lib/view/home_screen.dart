@@ -48,7 +48,8 @@ class HomeScreen extends GetView<ShopController> {
                                 onTap: () {
                                   Get.to(CategoryScreen());
                                 },
-                                child: shopListWidget(shopController, index),
+                                child: shopListWidget(shopController, index,
+                                    tempShop = shopController.shop[index]),
                               );
                             })),
                     // shopListWidget(shopController, list, tempShop)
@@ -60,6 +61,4 @@ class HomeScreen extends GetView<ShopController> {
               );
             }));
   }
-
- 
 }

@@ -82,9 +82,17 @@ class ManProductScreen extends StatelessWidget {
                                 color: Colors.white,
                                 border: Border.all(color: backgroundColor),
                                 borderRadius: BorderRadius.circular(10)),
-                            child: Text(shopController
-                                .shop[0].category![0].productName![index].name
-                                .toString()),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset(shopController.shop[0].category![0]
+                                    .productName![index].image
+                                    .toString()),
+                                Text(shopController.shop[0].category![0]
+                                    .productName![index].name
+                                    .toString()),
+                              ],
+                            ),
                           );
                         }),
                   ),
