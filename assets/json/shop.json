@@ -1,0 +1,136 @@
+[
+
+    {
+        "id":0,
+        "shop_name":"Addidas",
+        "shop_address":"Junction Square",
+        "opening_time" :"9:30 AM",
+        "category":[
+            {
+                "id":0,
+                "category_name":"Men", "image":"assets/images/man.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"shirt"
+                    },
+                    {
+                        "id" :1,
+                        "name":"Sneaker"
+                    },
+                    {
+                        "id" :0,
+                        "name":"Necktie"
+                    }
+                ]
+            }, 
+            {
+                "id":1,
+                "category_name":"Woman", "image":"assets/images/woman.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"Blouse"
+                    },
+                    {
+                        "id" :1,
+                        "name":"Skincare"
+                    },
+                    {
+                        "id" :2,
+                        "name":"Makeup"
+                    }
+                ]
+
+                
+            },
+             {
+                "id":2,
+                "category_name":"Accessories",  "image":"assets/images/accessories.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"Sunglasses"
+                    },
+                    {
+                        "id" :1,
+                        "name":"HouseHold_Chore"
+                    },
+                    {
+                        "id" :2,
+                        "name":"Funiture"
+                    }
+                ]
+                
+            }
+        ]
+
+    },
+
+    {
+        "id":1,
+        "shop_name":"Mango",
+        "shop_address":"Junction City",
+        "opening_time" :"8:30 AM",
+        "category":[
+            {
+                "id":0,
+                "category_name":"Jewellery",  "image":"assets/images/accessories.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"Ring"
+                    },
+                    {
+                        "id" :1,
+                        "name":"Earring"
+                    },
+                    {
+                        "id" :2,
+                        "name":"Necklace"
+                    }
+                ]
+                
+            }, 
+            {
+                "id":1,
+                "category_name":"Watch",  "image":"assets/images/accessories.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"DM"
+                    },
+                    {
+                        "id" :1,
+                        "name":"MK"
+                    },
+                    {
+                        "id" :2,
+                        "name":"AC"
+                    }
+                ]
+                
+            },
+             {
+                "id":2,
+                "category_name":"Shoe",  "image":"assets/images/accessories.png",
+                "product_name" :[
+                    {
+                        "id" :0,
+                        "name":"Lilly"
+                    },
+                    {
+                        "id" :1,
+                        "name":"Skincare"
+                    },
+                    {
+                        "id" :2,
+                        "name":"Makeup"
+                    }
+                ]
+                
+            }
+        ]
+    }
+
+]

@@ -3,9 +3,11 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:test_assignment/controller/login_controller.dart';
+import 'package:test_assignment/controller/shop_controller.dart';
 import 'package:test_assignment/utils/constant.dart';
-import 'package:test_assignment/view/authentication/controller/login_controller.dart';
-import 'package:test_assignment/view/home/screen/home_screen.dart';
+
+import 'package:test_assignment/view/home_screen.dart';
 import 'package:test_assignment/widget/login_button.dart';
 import 'package:test_assignment/widget/login_widget.dart';
 import 'package:test_assignment/widget/mail_textfield_widget.dart';
@@ -16,7 +18,8 @@ class LoginScreen extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    var logincontroller = Get.put(LoginController());
+    final loginController = Get.put(LoginController());
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
@@ -28,8 +31,8 @@ class LoginScreen extends GetView<LoginController> {
             child: Center(
           child: Column(
             children: [
-              mailWidget(logincontroller),
-              passwordWidget(logincontroller),
+              mailWidget(loginController),
+              passwordWidget(loginController),
               InkWell(
                   onTap: () {
                     Get.offAll(HomeScreen());

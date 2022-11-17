@@ -1,0 +1,74 @@
+[
+
+    {
+        "id":0,
+        "category_name":"Men",
+        "image":"assets/images/man.png",
+        "product_name" :[
+            {
+                "id" :0,
+                "name":"shirt"
+            },
+            {
+                "id" :1,
+                "name":"Sneaker"
+            },
+            {
+                "id" :2,
+                "name":"Necktie"
+            },
+            {
+                "id" :3,
+                "name":"Necktie"
+            }
+        ]
+    }, 
+    {
+        "id":1,
+        "category_name":"Woman",
+        "image":"assets/images/woman.png",
+        "product_name" :[
+            {
+                "id" :0,
+                "name":"Blouse"
+            },
+            {
+                "id" :1,
+                "name":"Skincare"
+            },
+            {
+                "id" :2,
+                "name":"Makeup"
+            }, {
+                "id" :3,
+                "name":"Makeup"
+            }
+        ]
+
+        
+    },
+     {
+        "id":2,
+        "category_name":"Accessories",
+        "image":"assets/images/accessories.png",
+        "product_name" :[
+            {
+                "id" :0,
+                "name":"Sunglasses"
+            },
+            {
+                "id" :1,
+                "name":"HouseHold_Chore"
+            },
+            {
+                "id" :2,
+                "name":"Funiture"
+            },
+            {
+                "id" :3,
+                "name":"Funiture"
+            }
+        ]
+        
+    }
+]

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:test_assignment/routes/app_routes.dart';
-import 'package:test_assignment/view/authentication/screen/login_screen.dart';
-import 'package:test_assignment/view/splash/screen/splash_screen.dart';
+import 'package:test_assignment/view/login_screen.dart';
+import 'package:test_assignment/view/splash_screen.dart';
 
 class AppPages {
   static final routes = [
