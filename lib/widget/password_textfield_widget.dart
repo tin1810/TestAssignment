@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-Widget passwordWidget(logincontroller) {
+Widget passwordWidget(authController, TextEditingController controller) {
   return Padding(
     padding: const EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
     child: TextFormField(
+      controller: controller,
+      obscureText: true,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(left: 5),
@@ -15,12 +17,16 @@ Widget passwordWidget(logincontroller) {
           Icons.key,
           color: Colors.blue,
         ),
-        suffixIcon: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.visibility,
-              color: Colors.grey.shade400,
-            )),
+        // suffixIcon: IconButton(
+        //     onPressed: () {
+
+        //     },
+        //     icon: Icon(
+        //       authController.isPasswordHidden.value
+        //           ? Icons.visibility_off
+        //           : Icons.visibility,
+        //       color: Colors.grey.shade400,
+        //     )),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(color: Colors.red)),

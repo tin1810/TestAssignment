@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:test_assignment/model/jewellery_model.dart';
 import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/widget/filter_widget.dart';
@@ -12,6 +13,12 @@ import 'package:test_assignment/widget/filter_widget.dart';
 class ShopController extends GetxController {
   List<ShopModel> shop = <ShopModel>[].obs;
   List<ProductModel> product = <ProductModel>[].obs;
+  List<ProductModel> watch = <ProductModel>[].obs;
+  List<ProductModel> man = <ProductModel>[].obs;
+  List<ProductModel> woman = <ProductModel>[].obs;
+  List<ProductModel> accessories = <ProductModel>[].obs;
+  List<ProductModel> jewellery = <ProductModel>[].obs;
+  List<ProductModel> shoe = <ProductModel>[].obs;
   Rx<List<dynamic>> foundProducts = Rx<List<dynamic>>([]);
 
   Rx<bool> isSort1 = false.obs;
@@ -19,11 +26,13 @@ class ShopController extends GetxController {
 
   @override
   void onInit() {
-    super.onInit();
     // Map<String, dynamic> args = Get.arguments;
     // categoryId.value = args['id'];
     loadShop();
+    loadProduct();
+    loadWatch();
     foundProducts.value = product.cast<Map<String, dynamic>>();
+    super.onInit();
   }
 
   @override
@@ -53,6 +62,51 @@ class ShopController extends GetxController {
     final productList = json.decode(jsonData) as List<dynamic>;
     print(productList);
     return productList.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadWatch() async {
+    final jsonData = await rootBundle.loadString("assets/json/watch.json");
+    final watchList = json.decode(jsonData) as List<dynamic>;
+    print(watchList);
+    return watchList.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadMan() async {
+    final jsonData =
+        await rootBundle.loadString("assets/json/man_product.json");
+    final man = json.decode(jsonData) as List<dynamic>;
+    print(man);
+    return man.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadWoman() async {
+    final jsonData = await rootBundle.loadString("assets/json/woman.json");
+    final woman = json.decode(jsonData) as List<dynamic>;
+    print(woman);
+    return woman.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadAccessories() async {
+    final jsonData =
+        await rootBundle.loadString("assets/json/accessories.json");
+    final accessories = json.decode(jsonData) as List<dynamic>;
+    print(accessories);
+    return accessories.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadJewellery() async {
+    final jsonData =
+        await rootBundle.loadString("assets/json/jewellery_product.json");
+    final jewellery = json.decode(jsonData) as List<dynamic>;
+    print(jewellery);
+    return jewellery.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  Future<List<ProductModel>> loadShoe() async {
+    final jsonData = await rootBundle.loadString("assets/json/shoe.json");
+    final shoe = json.decode(jsonData) as List<dynamic>;
+    print(shoe);
+    return shoe.map((e) => ProductModel.fromJson(e)).toList();
   }
 
   void filterProduct(String products) {
@@ -86,6 +140,23 @@ class ShopController extends GetxController {
     }
     foundProducts.value = results;
   }
+
+  Future<List<ProductModel>> sortProduct() async {
+    final jsonData = await rootBundle.loadString("assets/json/product.json");
+    final productsortList = json.decode(jsonData) as List<dynamic>;
+    print(productsortList);
+    productsortList.sort((a, b) => b.compareTo(a));
+    return productsortList.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  // Future<List<JewelleryModel>> loadJewellery() async {
+  //   final jsonData =
+  //       await rootBundle.loadString("assets/json/jewellery_product.json");
+  //   final jewelleryList = json.decode(jsonData) as List<dynamic>;
+  //   print(jewelleryList);
+  //   jewelleryList.sort((a, b) => b.compareTo(a));
+  //   return jewelleryList.map((e) => JewelleryModel.fromJson(e)).toList();
+  // }
 
   void sort1(List list) {
     list.sort((a, b) => isSort1.value ? a.compareTo(b) : b.compareTo(a));

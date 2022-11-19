@@ -2,99 +2,341 @@
     {
         "id" :0,
         "name":"shirt",
-         "image":"assets/images/shirt.png",
+        "image":"assets/images/shirt.png",
+        "price" :"20000 mmk",
         "code" :"000"
     },
     {
         "id" :1,
         "name":"Sneaker",
          "image":"assets/images/men's shoe.png",
+          "price" :"150000 mmk",
         "code" :"001"
     },
     {
         "id" :2,
         "name":"Necktie", 
         "image":"assets/images/necktie.png",
+         "price" :"18000 mmk",
         "code" :"002"
-    },{
+    },
+    {
         "id" :3,
-        "name":"Blouse", "image":"assets/images/blouse.png",
-        "code" :"010"
+        "name":"Jeans",
+        "image":"assets/images/jeans.png","price" :"50000 mmk",
+        "code" :"003"
     },
     {
         "id" :4,
-        "name":"Skincare", "image":"assets/images/skincare.png",
-        "code" :"011"
+        "name":"Trousers",
+        "image":"assets/images/jeans.png","price" :"6000 mmk",
+        "code" :"004"
     },
     {
         "id" :5,
-        "name":"Makeup", "image":"assets/images/makeup.png",
-        "code" :"012"
-    },  {
+        "name":"Polo Shirt",
+        "image":"assets/images/shirt.png","price" :"40000 mmk",
+        "code" :"005"
+    },
+    {
         "id" :6,
-        "name":"Sunglasses", "image":"assets/images/sunglasses.png",
-        "code" :"200"
+        "name":"Belt",
+        "image":"assets/images/belt.png","price" :"42000 mmk",
+        "code" :"006"
     },
     {
         "id" :7,
-        "name":"Hat", "image":"assets/images/cap.png",
-        "code" :"201"
+        "name":"Sunglasses",
+        "image":"assets/images/sunglasses.png","price" :"500000 mmk",
+        "code" :"007"
     },
     {
         "id" :8,
-        "name":"Bracelet", "image":"assets/images/bracelet.png",
-        "code" :"202"
+        "name":"Track Suit",
+        "image":"assets/images/shirt.png","price" :"32000 mmk",
+        "code" :"008"
     },{
         "id" :9,
-        "name":"Ring",
-        "image":"assets/images/ring.png",
-        "code" :"100"
+        "name":"Blouse", "image":"assets/images/blouse.png", "price" :"40000 mmk",
+        "code" :"010"
     },
     {
         "id" :10,
-        "name":"Earring",
-        "image":"assets/images/earrings.png",
-        "code" :"101"
+        "name":"Skincare", "image":"assets/images/skincare.png", "price" :"800000 mmk",
+        "code" :"011"
     },
     {
         "id" :11,
+        "name":"Makeup", "image":"assets/images/makeup.png", "price" :"120000 mmk",
+        "code" :"012"
+    },   {
+        "id" :12,
+        "name":"SwimSuit", "image":"assets/images/swimsuit.png", "price" :"25000 mmk",
+        "code" :"013"
+    },   {
+        "id" :13,
+        "name":"Lipstick", "image":"assets/images/makeup.png", "price" :"24000 mmk",
+        "code" :"014"
+    },   {
+        "id" :14,
+        "name":"Foundation", "image":"assets/images/makeup.png", "price" :"600000 mmk",
+        "code" :"015"
+    },   {
+        "id" :15,
+        "name":"Perfume", "image":"assets/images/skincare.png", "price" :"500400 mmk",
+        "code" :"016"
+    },   {
+        "id" :16,
+        "name":"Eyshadow", "image":"assets/images/makeup.png", "price" :"79000 mmk",
+        "code" :"017"
+    },   {
+        "id" :17,
+        "name":"Dress", "image":"assets/images/blouse.png", "price" :"1020400 mmk",
+        "code" :"018"
+    },   {
+        "id" :18,
+        "name":"Sunglasses",
+        "image":"assets/images/sunglasses.png", 
+        "price" :"460000 mmk",
+        "code" :"200"
+    },
+    {
+        "id" :19,
+        "name":"Hat",
+       "image":"assets/images/cap.png",
+       "price" :"65000 mmk",
+        "code" :"201"
+    },
+    {
+        "id" :20,
+        "name":"Ring",
+        "image":"assets/images/ring.png",
+        "price" :"300000 mmk",
+        "code" :"100"
+    },
+    {
+        "id" :21,
+        "name":"Earring",
+        "image":"assets/images/earrings.png",
+        "price" :"400000 mmk",
+        "code" :"101"
+    },
+    {
+        "id" :22,
         "name":"Necklace",
         "image":"assets/images/necklace.png",
+        "price" :"720000 mmk",
         "code" :"102"
     },
     {
-        "id" :12,
+        "id" :23,
+        "name":"Diamond Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"7500000 mmk",
+        "code" :"103"
+    },
+    {
+        "id" :24,
+        "name":"Jade Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"500000 mmk",
+        "code" :"104"
+    },
+    {
+        "id" :25,
+        "name":"Gold Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"840000 mmk",
+        "code" :"105"
+    },
+    {
+        "id" :26,
+        "name":"Diamond Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"6380000 mmk",
+        "code" :"106"
+    },
+    {
+        "id" :27,
+        "name":"Platinum Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"350000 mmk",
+        "code" :"107"
+    },
+    {
+        "id" :28,
+        "name":"Gold Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"650000 mmk",
+        "code" :"108"
+    },
+    {
+        "id" :29,
+        "name":"Shoe",
+        "image":"assets/images/timberland.png",
+        "price" :"350000 mmk",
+        "code" :"205"
+    },
+    {
+        "id" :30,
+        "name":"Sneaker",
+        "image":"assets/images/timberland.png",
+        "price" :"420000 mmk",
+        "code" :"206"
+    },
+    {
+        "id" :31,
+        "name":"Perfume",
+        "image":"assets/images/skincare.png",
+        "price" :"256300 mmk",
+        "code" :"207"
+    },
+    {
+        "id" :32,
+        "name":"Necktie",
+        "image":"assets/images/necktie.png",
+        "price" :"321000 mmk",
+        "code" :"208"
+    },{
+        "id" :33,
+        "name":"Ring",
+        "image":"assets/images/ring.png", "price" :"1800000 mmk",
+        "code" :"100"
+    },
+    {
+        "id" :34,
+        "name":"Earring",
+        "image":"assets/images/earrings.png", "price" :"1800000 mmk",
+        "code" :"101"
+    },
+    {
+        "id" :35,
+        "name":"Necklace",
+        "image":"assets/images/necklace.png", "price" :"1800000 mmk",
+        "code" :"102"
+    },
+    {
+        "id" :36,
         "name":"DM",
        "image":"assets/images/dm.png",
+        "price" :"180000 mmk",
         "code" :"110"
     },
     {
-        "id" :13,
+        "id" :37,
         "name":"MK",
-        "image":"assets/images/mk.png",
+        "image":"assets/images/dm.png",  "price" :"250000 mmk",
         "code" :"111"
     },
     {
-        "id" :14,
+        "id" :38,
         "name":"AC",
-        "image":"assets/images/ac.png",
+        "image":"assets/images/dm.png",  "price" :"200000 mmk",
         "code" :"112"
+    },
+    {
+        "id" :39,
+        "name":"Trofish",
+        "image":"assets/images/dm.png",  "price" :"700000 mmk",
+        "code" :"113"
+    },
+    {
+        "id" :40,
+        "name":"Rolex",
+        "image":"assets/images/dm.png",  "price" :"14000000 mmk",
+        "code" :"114"
+    },
+    {
+        "id" :41,
+        "name":"Romanson",
+        "image":"assets/images/dm.png",  "price" :"8000000 mmk",
+        "code" :"115"
+    },
+    {
+        "id" :42,
+        "name":"Omega",
+        "image":"assets/images/dm.png",  "price" :"900000 mmk",
+        "code" :"116"
+    },
+    {
+        "id" :43,
+        "name":"Apple Watch",
+        "image":"assets/images/dm.png",  "price" :"1800000 mmk",
+        "code" :"117"
+    },
+    {
+        "id" :44,
+        "name":"Samsung Smart Watch",
+        "image":"assets/images/dm.png",
+        "price" :"900000 mmk",
+        "code" :"118"
     }, {
-        "id" :15,
+        "id" :45,
         "name":"Lilly",
         "image":"assets/images/lilly.png",
+        "price" :"54000 mmk",
         "code" :"120"
     },
     {
-        "id" :16,
+        "id" :46,
         "name":"Timberland",
         "image":"assets/images/timberland.png",
+        "price" :"600000 mmk",
         "code" :"121"
     },
     {
-        "id" :17,
+        "id" :47,
         "name":"Flipflop",
         "image":"assets/images/flipflops.png",
+        "price" :"250000 mmk",
         "code" :"122"
+    }
+    ,
+    {
+        "id" :48,
+        "name":"Erk",
+        "image":"assets/images/timberland.png",
+        "price" :"89200 mmk",
+        "code" :"123"
+    }
+    ,
+    {
+        "id" :49,
+        "name":"Penshoppe",
+        "image":"assets/images/timberland.png",
+        "price" :"120000 mmk",
+        "code" :"124"
+    }
+    ,
+    {
+        "id" :50,
+        "name":"Sketchers",
+        "image":"assets/images/timberland.png",
+        "price" :"90000 mmk",
+        "code" :"125"
+    }
+    ,
+    {
+        "id" :51,
+        "name":"New Balance",
+        "image":"assets/images/timberland.png",
+        "price" :"300000 mmk",
+        "code" :"126"
+    }
+    ,
+    {
+        "id" :52,
+        "name":"Yeezy",
+        "image":"assets/images/timberland.png",
+        "price" :"800000 mmk",
+        "code" :"127"
+    }
+    ,
+    {
+        "id" :53,
+        "name":"Ripples",
+        "image":"assets/images/flipflops.png",
+        "price" :"36000 mmk",
+        "code" :"128"
     }
 ]

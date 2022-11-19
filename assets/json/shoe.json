@@ -1,0 +1,70 @@
+[{
+    "id" :0,
+    "name":"Lilly",
+    "image":"assets/images/lilly.png",
+    "price" :"54000 mmk",
+    "code" :"120"
+},
+{
+    "id" :1,
+    "name":"Timberland",
+    "image":"assets/images/timberland.png",
+    "price" :"600000 mmk",
+    "code" :"121"
+},
+{
+    "id" :2,
+    "name":"Flipflop",
+    "image":"assets/images/flipflops.png",
+    "price" :"250000 mmk",
+    "code" :"122"
+}
+,
+{
+    "id" :3,
+    "name":"Erk",
+    "image":"assets/images/timberland.png",
+    "price" :"89200 mmk",
+    "code" :"123"
+}
+,
+{
+    "id" :4,
+    "name":"Penshoppe",
+    "image":"assets/images/timberland.png",
+    "price" :"120000 mmk",
+    "code" :"124"
+}
+,
+{
+    "id" :5,
+    "name":"Sketchers",
+    "image":"assets/images/timberland.png",
+    "price" :"90000 mmk",
+    "code" :"125"
+}
+,
+{
+    "id" :6,
+    "name":"New Balance",
+    "image":"assets/images/timberland.png",
+    "price" :"300000 mmk",
+    "code" :"126"
+}
+,
+{
+    "id" :7,
+    "name":"Yeezy",
+    "image":"assets/images/timberland.png",
+    "price" :"800000 mmk",
+    "code" :"127"
+}
+,
+{
+    "id" :8,
+    "name":"Ripples",
+    "image":"assets/images/flipflops.png",
+    "price" :"36000 mmk",
+    "code" :"128"
+}
+]

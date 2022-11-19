@@ -28,10 +28,14 @@ Widget CategoryWidget(int index, Category? tempCat) {
         ),
         child: Column(
           children: [
-            Image.asset(tempCat!.image.toString()),
-            Text(
-              tempCat.categoryName.toString(),
-              style: TextStyle(fontSize: 20),
+            SizedBox(
+                height: 110, child: Image.asset(tempCat!.image.toString())),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                tempCat.categoryName.toString(),
+                style: TextStyle(fontSize: 18),
+              ),
             )
           ],
         )),

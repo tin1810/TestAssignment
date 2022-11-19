@@ -36,6 +36,8 @@ class ShopModel {
     }
     return data;
   }
+
+  
 }
 
 class Category {

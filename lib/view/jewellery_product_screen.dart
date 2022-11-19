@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
+import 'package:test_assignment/model/jewellery_model.dart';
 import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
@@ -23,7 +24,7 @@ class JewelleryProductScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
-          "Product",
+          "Jewellery's Product List",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -37,45 +38,40 @@ class JewelleryProductScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: FutureBuilder<List<ShopModel>>(
-          future: shopController.loadShop(),
+      body: FutureBuilder<List<ProductModel>>(
+          future: shopController.loadJewellery(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              shopController.shop = snapshot.data as List<ShopModel>;
+              shopController.jewellery = snapshot.data as List<ProductModel>;
 
-              return SingleChildScrollView(
-                  child: Column(
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 20, bottom: 10, left: 15),
-                        child: titleTextWidget("Jewellery's Product Lists"),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: IconButton(
-                            onPressed: () {
-                              shopController.sort1(shopController.product);
-                              // snapshot.data!.reversed.toList();
-                            },
-                            icon: const Icon(Icons.list)),
-                      )
-                    ],
+                  ListTile(
+                    leading: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.price!.compareTo(b.price!));
+                        },
+                        icon: const Icon(
+                          Icons.money,
+                          color: Colors.black,
+                        )),
+                    trailing: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.name!.compareTo(b.name!));
+                        },
+                        icon: const Icon(Icons.list)),
                   ),
                   const Divider(
                     indent: 10,
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  SizedBox(
-                    height: 500,
+                  Flexible(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: shopController
-                            .shop[1].category![0].productName!.length,
+                        itemCount: shopController.jewellery.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
@@ -92,12 +88,27 @@ class JewelleryProductScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(shopController.shop[1].category![0]
-                                    .productName![index].image
+                                Image.asset(shopController
+                                    .jewellery[index].image
                                     .toString()),
-                                Text(shopController.shop[1].category![0]
-                                    .productName![index].name
-                                    .toString()),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    productName(
+                                      shopController.jewellery[index].name
+                                          .toString(),
+                                    ),
+                                    price(
+                                      shopController.jewellery[index].price
+                                          .toString(),
+                                    ),
+                                    productCode(
+                                      shopController.jewellery[index].code
+                                          .toString(),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           );
@@ -107,7 +118,7 @@ class JewelleryProductScreen extends StatelessWidget {
                     height: 20,
                   )
                 ],
-              ));
+              );
             }
             return const Center(
               child: CircularProgressIndicator(),

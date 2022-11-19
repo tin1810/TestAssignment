@@ -1,9 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_assignment/controller/auth_controller.dart';
 import 'package:test_assignment/utils/constant.dart';
+import 'package:test_assignment/view/profile_screen.dart';
 
-Widget appBar() {
+Widget appBar(String email) {
   return AppBar(
     backgroundColor: backgroundColor,
     elevation: 0,
@@ -19,8 +23,7 @@ Widget appBar() {
                   color: Colors.white,
                 )),
             InkWell(
-              onTap: () {},
-              child: const CircleAvatar(
+              child: CircleAvatar(
                 backgroundColor: Colors.transparent,
                 backgroundImage: AssetImage(
                   "assets/icons/avatar.png",
@@ -33,10 +36,10 @@ Widget appBar() {
             height: 20,
           ),
           Text(
-            "Welcome to Our App",
+            "Welcome $email",
             style: TextStyle(
                 fontSize: 23, fontWeight: FontWeight.w500, color: Colors.white),
-          )
+          ),
         ],
       ),
     ),

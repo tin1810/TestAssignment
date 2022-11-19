@@ -1,16 +1,17 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
-import 'package:test_assignment/model/shop_model.dart';
+import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/utils/constant.dart';
 
 import 'package:test_assignment/widget/titleText_widget.dart';
 
 import 'search_screen.dart';
 
-class AccessoriesProductScreen extends StatelessWidget {
+class AccessoriesProductScreen extends GetView<ShopController> {
   const AccessoriesProductScreen({super.key});
 
   @override
@@ -21,7 +22,7 @@ class AccessoriesProductScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
-          "Product",
+          "Acces's Product List",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -35,41 +36,40 @@ class AccessoriesProductScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: FutureBuilder<List<ShopModel>>(
-          future: shopController.loadShop(),
+      body: FutureBuilder<List<ProductModel>>(
+          future: shopController.loadAccessories(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              shopController.shop = snapshot.data as List<ShopModel>;
+              shopController.accessories = snapshot.data as List<ProductModel>;
 
-              return SingleChildScrollView(
-                  child: Column(
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 20, bottom: 10, left: 15),
-                        child: titleTextWidget("Accessories's Product Lists"),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.list)),
-                      )
-                    ],
+                  ListTile(
+                    leading: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.price!.compareTo(b.price!));
+                        },
+                        icon: const Icon(
+                          Icons.money,
+                          color: Colors.black,
+                        )),
+                    trailing: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.name!.compareTo(b.name!));
+                        },
+                        icon: const Icon(Icons.list)),
                   ),
                   const Divider(
                     indent: 10,
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  SizedBox(
-                    height: 500,
+                  Flexible(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: shopController
-                            .shop[0].category![2].productName!.length,
+                        itemCount: shopController.accessories.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
@@ -86,12 +86,27 @@ class AccessoriesProductScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(shopController.shop[0].category![2]
-                                    .productName![index].image
+                                Image.asset(shopController
+                                    .accessories[index].image
                                     .toString()),
-                                Text(shopController.shop[0].category![2]
-                                    .productName![index].name
-                                    .toString()),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    productName(
+                                      shopController.accessories[index].name
+                                          .toString(),
+                                    ),
+                                    price(
+                                      shopController.accessories[index].price
+                                          .toString(),
+                                    ),
+                                    productCode(
+                                      shopController.accessories[index].code
+                                          .toString(),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           );
@@ -101,7 +116,7 @@ class AccessoriesProductScreen extends StatelessWidget {
                     height: 20,
                   )
                 ],
-              ));
+              );
             }
             return const Center(
               child: CircularProgressIndicator(),

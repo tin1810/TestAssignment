@@ -1,20 +1,16 @@
-// ignore_for_file: unnecessary_new
-
-class ProductModel {
+class JewelleryModel {
   int? id;
   String? name;
-  String? price;
   String? image;
   String? code;
 
-  ProductModel({this.id, this.name, this.image, this.code, this.price});
+  JewelleryModel({this.id, this.name, this.image, this.code});
 
-  ProductModel.fromJson(Map<String, dynamic> json) {
+  JewelleryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     image = json['image'];
     code = json['code'];
-    price = json['price'];
   }
 
   Map<String, dynamic> toJson() {
@@ -23,8 +19,6 @@ class ProductModel {
     data['name'] = name;
     data['image'] = image;
     data['code'] = code;
-    data['price'] = price;
-
     return data;
   }
 }

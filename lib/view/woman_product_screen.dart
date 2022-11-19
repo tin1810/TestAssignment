@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
+import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/view/search_screen.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
-class WomanProductScreen extends StatelessWidget {
+class WomanProductScreen extends GetView<ShopController> {
   const WomanProductScreen({super.key});
 
   @override
@@ -17,7 +18,7 @@ class WomanProductScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
-          "Product",
+          "Woman's Product List",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -31,41 +32,40 @@ class WomanProductScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: FutureBuilder<List<ShopModel>>(
-          future: shopController.loadShop(),
+      body: FutureBuilder<List<ProductModel>>(
+          future: shopController.loadWoman(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              shopController.shop = snapshot.data as List<ShopModel>;
+              shopController.woman = snapshot.data as List<ProductModel>;
 
-              return SingleChildScrollView(
-                  child: Column(
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 20, bottom: 10, left: 15),
-                        child: titleTextWidget("Woman's Product Lists"),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.list)),
-                      )
-                    ],
+                  ListTile(
+                    leading: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.price!.compareTo(b.price!));
+                        },
+                        icon: const Icon(
+                          Icons.money,
+                          color: Colors.black,
+                        )),
+                    trailing: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.name!.compareTo(b.name!));
+                        },
+                        icon: const Icon(Icons.list)),
                   ),
                   const Divider(
                     indent: 10,
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  SizedBox(
-                    height: 500,
+                  Flexible(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: shopController
-                            .shop[0].category![1].productName!.length,
+                        itemCount: shopController.woman.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
@@ -82,12 +82,26 @@ class WomanProductScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(shopController.shop[0].category![1]
-                                    .productName![index].image
+                                Image.asset(shopController.woman[index].image
                                     .toString()),
-                                Text(shopController.shop[0].category![1]
-                                    .productName![index].name
-                                    .toString()),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    productName(
+                                      shopController.woman[index].name
+                                          .toString(),
+                                    ),
+                                    price(
+                                      shopController.woman[index].price
+                                          .toString(),
+                                    ),
+                                    productCode(
+                                      shopController.woman[index].code
+                                          .toString(),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           );
@@ -97,7 +111,7 @@ class WomanProductScreen extends StatelessWidget {
                     height: 20,
                   )
                 ],
-              ));
+              );
             }
             return const Center(
               child: CircularProgressIndicator(),

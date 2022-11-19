@@ -10,7 +10,7 @@ import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends GetView<ShopController> {
   const SearchScreen({super.key});
 
   @override
@@ -44,11 +44,9 @@ class SearchScreen extends StatelessWidget {
             if (snapshot.hasData) {
               shopController.product = snapshot.data as List<ProductModel>;
 
-              return SingleChildScrollView(
-                  child: Column(
+              return Column(
                 children: [
-                  SizedBox(
-                    height: 500,
+                  Flexible(
                     child: Obx(() => ListView.builder(
                         shrinkWrap: true,
                         itemCount: shopController.foundProducts.value.length,
@@ -71,15 +69,34 @@ class SearchScreen extends StatelessWidget {
                                 Image.asset(shopController
                                     .foundProducts.value[index].image
                                     .toString()),
-                                Text(shopController.product[index].name
-                                    .toString()),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    productName(
+                                      shopController
+                                          .foundProducts.value[index].name
+                                          .toString(),
+                                    ),
+                                    price(
+                                      shopController
+                                          .foundProducts.value[index].price
+                                          .toString(),
+                                    ),
+                                    productCode(
+                                      shopController
+                                          .foundProducts.value[index].code
+                                          .toString(),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           );
                         })),
                   ),
                 ],
-              ));
+              );
             }
             return const Center(
               child: CircularProgressIndicator(),

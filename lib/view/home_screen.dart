@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:test_assignment/controller/auth_controller.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/utils/constant.dart';
@@ -13,7 +17,8 @@ import 'package:test_assignment/widget/shoplist_widget.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
 class HomeScreen extends GetView<ShopController> {
-  const HomeScreen({super.key});
+  String email;
+  HomeScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class HomeScreen extends GetView<ShopController> {
     ShopModel? tempShop;
     return Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(165), child: appBar()),
+            preferredSize: const Size.fromHeight(165), child: appBar(email)),
         body: FutureBuilder<List<ShopModel>>(
             future: shopController.loadShop(),
             builder: (context, snapshot) {
@@ -52,6 +57,20 @@ class HomeScreen extends GetView<ShopController> {
                                     tempShop = shopController.shop[index]),
                               );
                             })),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              AuthController.instance.logOut();
+                            },
+                            icon: const Icon(Icons.logout)),
+                        const Text("Logout"),
+                      ],
+                    )
                     // shopListWidget(shopController, list, tempShop)
                   ],
                 );

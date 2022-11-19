@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/shop_controller.dart';
-import 'package:test_assignment/model/shop_model.dart';
+import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/view/search_screen.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
@@ -19,7 +17,7 @@ class ShoeProductScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
-          "Product",
+          "Shoe's Product List",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -33,41 +31,40 @@ class ShoeProductScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: FutureBuilder<List<ShopModel>>(
-          future: shopController.loadShop(),
+      body: FutureBuilder<List<ProductModel>>(
+          future: shopController.loadShoe(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              shopController.shop = snapshot.data as List<ShopModel>;
+              shopController.shoe = snapshot.data as List<ProductModel>;
 
-              return SingleChildScrollView(
-                  child: Column(
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 20, bottom: 10, left: 15),
-                        child: titleTextWidget("Shoe's Product Lists"),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.list)),
-                      )
-                    ],
+                  ListTile(
+                    leading: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.price!.compareTo(b.price!));
+                        },
+                        icon: const Icon(
+                          Icons.money,
+                          color: Colors.black,
+                        )),
+                    trailing: IconButton(
+                        onPressed: () {
+                          snapshot.data!
+                              .sort((a, b) => a.name!.compareTo(b.name!));
+                        },
+                        icon: const Icon(Icons.list)),
                   ),
                   const Divider(
                     indent: 10,
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  SizedBox(
-                    height: 500,
+                  Flexible(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: shopController
-                            .shop[1].category![2].productName!.length,
+                        itemCount: shopController.shoe.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
@@ -84,12 +81,26 @@ class ShoeProductScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(shopController.shop[1].category![2]
-                                    .productName![index].image
+                                Image.asset(shopController.shoe[index].image
                                     .toString()),
-                                Text(shopController.shop[1].category![2]
-                                    .productName![index].name
-                                    .toString()),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    productName(
+                                      shopController.shoe[index].name
+                                          .toString(),
+                                    ),
+                                    price(
+                                      shopController.shoe[index].price
+                                          .toString(),
+                                    ),
+                                    productCode(
+                                      shopController.shoe[index].code
+                                          .toString(),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           );
@@ -99,7 +110,7 @@ class ShoeProductScreen extends StatelessWidget {
                     height: 20,
                   )
                 ],
-              ));
+              );
             }
             return const Center(
               child: CircularProgressIndicator(),

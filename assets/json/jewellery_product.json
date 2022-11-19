@@ -1,0 +1,66 @@
+[
+
+    {
+        "id" :0,
+        "name":"Ring",
+        "image":"assets/images/ring.png",
+        "price" :"300000 mmk",
+        "code" :"100"
+    },
+    {
+        "id" :1,
+        "name":"Earring",
+        "image":"assets/images/earrings.png",
+        "price" :"400000 mmk",
+        "code" :"101"
+    },
+    {
+        "id" :2,
+        "name":"Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"720000 mmk",
+        "code" :"102"
+    },
+    {
+        "id" :3,
+        "name":"Diamond Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"7500000 mmk",
+        "code" :"103"
+    },
+    {
+        "id" :4,
+        "name":"Jade Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"500000 mmk",
+        "code" :"104"
+    },
+    {
+        "id" :5,
+        "name":"Gold Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"840000 mmk",
+        "code" :"105"
+    },
+    {
+        "id" :6,
+        "name":"Diamond Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"6380000 mmk",
+        "code" :"106"
+    },
+    {
+        "id" :7,
+        "name":"Platinum Bracelet",
+        "image":"assets/images/bracelet.png",
+        "price" :"350000 mmk",
+        "code" :"107"
+    },
+    {
+        "id" :8,
+        "name":"Gold Necklace",
+        "image":"assets/images/necklace.png",
+        "price" :"650000 mmk",
+        "code" :"108"
+    }
+]
