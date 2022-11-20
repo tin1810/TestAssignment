@@ -9,51 +9,57 @@
     {
         "id" :1,
         "name":"Sneaker",
-         "image":"assets/images/men's shoe.png",
-          "price" :"150000 mmk",
+        "image":"assets/images/men's shoe.png",
+        "price" :"150000 mmk",
         "code" :"001"
     },
     {
         "id" :2,
         "name":"Necktie", 
         "image":"assets/images/necktie.png",
-         "price" :"18000 mmk",
+        "price" :"18000 mmk",
         "code" :"002"
     },
     {
         "id" :3,
         "name":"Jeans",
-        "image":"assets/images/jeans.png","price" :"50000 mmk",
+        "image":"assets/images/jeans.png",
+        "price" :"50000 mmk",
         "code" :"003"
     },
     {
         "id" :4,
         "name":"Trousers",
-        "image":"assets/images/jeans.png","price" :"6000 mmk",
+        "image":"assets/images/jeans.png",
+        "price" :"6000 mmk",
         "code" :"004"
     },
     {
         "id" :5,
         "name":"Polo Shirt",
-        "image":"assets/images/shirt.png","price" :"40000 mmk",
+        "image":"assets/images/shirt.png",
+        "price" :"40000 mmk",
         "code" :"005"
     },
     {
         "id" :6,
         "name":"Belt",
-        "image":"assets/images/belt.png","price" :"42000 mmk",
+        "image":"assets/images/belt.png",
+        "price" :"42000 mmk",
         "code" :"006"
     },
     {
         "id" :7,
         "name":"Sunglasses",
-        "image":"assets/images/sunglasses.png","price" :"500000 mmk",
+        "image":"assets/images/sunglasses.png",
+        "price" :"500000 mmk",
         "code" :"007"
     },
     {
         "id" :8,
         "name":"Track Suit",
-        "image":"assets/images/shirt.png","price" :"32000 mmk",
+        "image":"assets/images/shirt.png",
+        "price" :"32000 mmk",
         "code" :"008"
     }
 ]

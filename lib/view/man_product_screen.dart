@@ -46,8 +46,7 @@ class ManProductScreen extends GetView<ShopController> {
                   ListTile(
                     leading: IconButton(
                         onPressed: () {
-                          snapshot.data!
-                              .sort((a, b) => a.price!.compareTo(b.price!));
+                          shopController.sortProductList(snapshot.data!);
                         },
                         icon: const Icon(
                           Icons.money,
@@ -55,8 +54,10 @@ class ManProductScreen extends GetView<ShopController> {
                         )),
                     trailing: IconButton(
                         onPressed: () {
-                          snapshot.data!
-                              .sort((a, b) => a.name!.compareTo(b.name!));
+                          shopController.sortProductList(snapshot.data!);
+                          // shopController.issortProduct
+                          // snapshot.data!
+                          //     .sort((a, b) => a.name!.compareTo(b.name!));
                         },
                         icon: const Icon(Icons.list)),
                   ),
@@ -65,52 +66,9 @@ class ManProductScreen extends GetView<ShopController> {
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  Flexible(
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: shopController.man.length,
-                        // itemCount: shopController
-                        //     .shop[0].category![0].productName!.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                              left: 10,
-                              right: 10,
-                              top: 10,
-                            ),
-                            height: 100,
-                            width: 100,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(color: backgroundColor),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Image.asset(
-                                    shopController.man[index].image.toString()),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    productName(
-                                      shopController.man[index].name.toString(),
-                                    ),
-                                    price(
-                                      shopController.man[index].price
-                                          .toString(),
-                                    ),
-                                    productCode(
-                                      shopController.man[index].code.toString(),
-                                    ),
-                                  ],
-                                ),
-                              
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
+                  Obx(() => shopController.issortProduct.value
+                      ? Container()
+                      : manList(shopController)),
                   SizedBox(
                     height: 20,
                   )
@@ -119,6 +77,51 @@ class ManProductScreen extends GetView<ShopController> {
             }
             return const Center(
               child: CircularProgressIndicator(),
+            );
+          }),
+    );
+  }
+
+  Flexible manList(ShopController shopController) {
+    return Flexible(
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: shopController.man.length,
+          // itemCount: shopController
+          //     .shop[0].category![0].productName!.length,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.man[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.man[index].name.toString(),
+                      ),
+                      price(
+                        shopController.man[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.man[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             );
           }),
     );

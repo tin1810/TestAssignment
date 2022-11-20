@@ -1,41 +1,65 @@
 [
     {
         "id" :0,
-        "name":"Blouse", "image":"assets/images/blouse.png", "price" :"40000 mmk",
+        "name":"Blouse",
+        "image":"assets/images/blouse.png",
+        "price" :"40000 mmk",
         "code" :"010"
     },
     {
         "id" :1,
-        "name":"Skincare", "image":"assets/images/skincare.png", "price" :"800000 mmk",
+        "name":"Skincare",
+        "image":"assets/images/skincare.png",
+        "price" :"800000 mmk",
         "code" :"011"
     },
     {
         "id" :2,
-        "name":"Makeup", "image":"assets/images/makeup.png", "price" :"120000 mmk",
+        "name":"Makeup",
+        "image":"assets/images/makeup.png",
+        "price" :"120000 mmk",
         "code" :"012"
-    },   {
+    },
+    {
         "id" :3,
-        "name":"SwimSuit", "image":"assets/images/swimsuit.png", "price" :"25000 mmk",
+        "name":"SwimSuit",
+        "image":"assets/images/swimsuit.png",
+        "price" :"25000 mmk",
         "code" :"013"
-    },   {
+    }, 
+      {
         "id" :4,
-        "name":"Lipstick", "image":"assets/images/makeup.png", "price" :"24000 mmk",
+        "name":"Lipstick",
+        "image":"assets/images/makeup.png",
+        "price" :"24000 mmk",
         "code" :"014"
-    },   {
+    }, 
+      {
         "id" :5,
-        "name":"Foundation", "image":"assets/images/makeup.png", "price" :"600000 mmk",
+        "name":"Foundation",
+        "image":"assets/images/makeup.png",
+        "price" :"600000 mmk",
         "code" :"015"
-    },   {
+    },  
+     {
         "id" :6,
-        "name":"Perfume", "image":"assets/images/skincare.png", "price" :"500400 mmk",
+        "name":"Perfume",
+        "image":"assets/images/skincare.png",
+        "price" :"500400 mmk",
         "code" :"016"
-    },   {
+    },   
+    {
         "id" :7,
-        "name":"Eyshadow", "image":"assets/images/makeup.png", "price" :"79000 mmk",
+        "name":"Eyshadow",
+        "image":"assets/images/makeup.png",
+        "price" :"79000 mmk",
         "code" :"017"
-    },   {
+    },  
+     {
         "id" :8,
-        "name":"Dress", "image":"assets/images/blouse.png", "price" :"1020400 mmk",
+        "name":"Dress",
+        "image":"assets/images/blouse.png",
+        "price" :"1020400 mmk",
         "code" :"018"
     }
 ]

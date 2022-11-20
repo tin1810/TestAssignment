@@ -21,8 +21,8 @@ class ShopController extends GetxController {
   List<ProductModel> shoe = <ProductModel>[].obs;
   Rx<List<dynamic>> foundProducts = Rx<List<dynamic>>([]);
 
-  Rx<bool> isSort1 = false.obs;
-  Rx<bool> isSort2 = false.obs;
+  Rx<bool> issortProduct = false.obs;
+  Rx<bool> issortPrice = false.obs;
 
   @override
   void onInit() {
@@ -72,6 +72,9 @@ class ShopController extends GetxController {
   }
 
   Future<List<ProductModel>> loadMan() async {
+    issortProduct.value == true;
+    issortPrice.value = true;
+
     final jsonData =
         await rootBundle.loadString("assets/json/man_product.json");
     final man = json.decode(jsonData) as List<dynamic>;
@@ -146,6 +149,7 @@ class ShopController extends GetxController {
     final productsortList = json.decode(jsonData) as List<dynamic>;
     print(productsortList);
     productsortList.sort((a, b) => b.compareTo(a));
+
     return productsortList.map((e) => ProductModel.fromJson(e)).toList();
   }
 
@@ -158,15 +162,17 @@ class ShopController extends GetxController {
   //   return jewelleryList.map((e) => JewelleryModel.fromJson(e)).toList();
   // }
 
-  void sort1(List list) {
-    list.sort((a, b) => isSort1.value ? a.compareTo(b) : b.compareTo(a));
-    isSort1.value == true;
+  void sortProductList(List<ProductModel> list) {
+    list.sort((a, b) => issortProduct.value
+        ? a.name!.compareTo(b.toString())
+        : b.name!.compareTo(a.toString()));
+    issortProduct.value == true;
   }
 
-  void sort2(List list) {
-    list.sort((a, b) => isSort2.value ? a.compareTo(b) : b.compareTo(a));
-    isSort2.value == true;
-  }
+  // void sort2(List list) {
+  //   list.sort((a, b) => isSort2.value ? a.compareTo(b) : b.compareTo(a));
+  //   isSort2.value == true;
+  // }
 
   Future<dynamic> bottomSheet(context) {
     return showModalBottomSheet(
