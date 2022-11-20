@@ -3,63 +3,63 @@
         "id" :0,
         "name":"DM",
        "image":"assets/images/dm.png",
-        "price" :"180000 mmk",
+        "price" :180000,
         "code" :"110"
     },
     {
         "id" :1,
         "name":"MK",
         "image":"assets/images/dm.png",
-        "price" :"250000 mmk",
+        "price" :250000,
         "code" :"111"
     },
     {
         "id" :2,
         "name":"AC",
         "image":"assets/images/dm.png",
-        "price" :"200000 mmk",
+        "price" :200000,
         "code" :"112"
     },
     {
         "id" :3,
         "name":"Trofish",
         "image":"assets/images/dm.png",
-        "price" :"700000 mmk",
+        "price" :700000,
         "code" :"113"
     },
     {
         "id" :4,
         "name":"Rolex",
         "image":"assets/images/dm.png",
-        "price" :"14000000 mmk",
+        "price" :14000000,
         "code" :"114"
     },
     {
         "id" :5,
         "name":"Romanson",
         "image":"assets/images/dm.png",
-        "price" :"8000000 mmk",
+        "price" :8000000,
         "code" :"115"
     },
     {
         "id" :6,
         "name":"Omega",
         "image":"assets/images/dm.png",
-        "price" :"900000 mmk",
+        "price" :900000,
         "code" :"116"
     },
     {
         "id" :7,
         "name":"Apple Watch",
         "image":"assets/images/dm.png",
-        "price" :"1800000 mmk",
+        "price" :1800000,
         "code" :"117"
     },
     {
         "id" :8,
         "name":"Samsung Smart Watch",
         "image":"assets/images/dm.png",
-        "price" :"900000 mmk",
+        "price" :900000,
         "code" :"118"
     }
 ]

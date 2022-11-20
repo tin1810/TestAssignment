@@ -3,333 +3,332 @@
         "id" :0,
         "name":"shirt",
         "image":"assets/images/shirt.png",
-        "price" :"20000 mmk",
+        "price" :20000,
         "code" :"000"
     },
     {
         "id" :1,
         "name":"Sneaker",
         "image":"assets/images/men's shoe.png",
-        "price" :"150000 mmk",
+        "price" :150000,
         "code" :"001"
     },
     {
         "id" :2,
         "name":"Necktie", 
         "image":"assets/images/necktie.png",
-         "price" :"18000 mmk",
+         "price" :18000,
         "code" :"002"
     },
     {
         "id" :3,
         "name":"Jeans",
         "image":"assets/images/jeans.png",
-        "price" :"50000 mmk",
+        "price" :50000,
         "code" :"003"
     },
     {
         "id" :4,
         "name":"Trousers",
         "image":"assets/images/jeans.png",
-        "price" :"6000 mmk",
+        "price" :6000,
         "code" :"004"
     },
     {
         "id" :5,
         "name":"Polo Shirt",
         "image":"assets/images/shirt.png",
-        "price" :"40000 mmk",
+        "price" :40000,
         "code" :"005"
     },
     {
         "id" :6,
         "name":"Belt",
         "image":"assets/images/belt.png",
-        "price" :"42000 mmk",
+        "price" :42000,
         "code" :"006"
     },
     {
         "id" :7,
         "name":"Sunglasses",
         "image":"assets/images/sunglasses.png",
-        "price" :"500000 mmk",
+        "price" :500000,
         "code" :"007"
     },
     {
         "id" :8,
         "name":"Track Suit",
         "image":"assets/images/shirt.png",
-        "price" :"32000 mmk",
+        "price" :32000,
         "code" :"008"
     },{
         "id" :9,
         "name":"Blouse",
         "image":"assets/images/blouse.png",
-        "price" :"40000 mmk",
+        "price" :40000,
         "code" :"010"
     },
     {
         "id" :10,
         "name":"Skincare",
         "image":"assets/images/skincare.png",
-        "price" :"800000 mmk",
+        "price" :800000,
         "code" :"011"
     },
     {
         "id" :11,
         "name":"Makeup",
         "image":"assets/images/makeup.png",
-        "price" :"120000 mmk",
+        "price" :120000,
         "code" :"012"
     }, 
       {
         "id" :12,
         "name":"SwimSuit",
         "image":"assets/images/swimsuit.png",
-    
-        "price" :"25000 mmk",
+        "price" :25000,
         "code" :"013"
     },   {
         "id" :13,
         "name":"Lipstick",
         "image":"assets/images/makeup.png",
-        "price" :"24000 mmk",
+        "price" :24000,
         "code" :"014"
     },  
     {
         "id" :14,
         "name":"Foundation",
         "image":"assets/images/makeup.png",
-        "price" :"600000 mmk",
+        "price" :600000,
         "code" :"015"
     },
     {
         "id" :15,
         "name":"Perfume",
         "image":"assets/images/skincare.png",
-        "price" :"500400 mmk",
+        "price" :500400,
         "code" :"016"
     },
     {
         "id" :16,
         "name":"Eyshadow",
         "image":"assets/images/makeup.png",
-        "price" :"79000 mmk",
+        "price" :79000,
         "code" :"017"
     },
     {
         "id" :17,
         "name":"Dress",
         "image":"assets/images/blouse.png",
-        "price" :"1020400 mmk",
+        "price" :1020400,
         "code" :"018"
     },
     {
         "id" :18,
         "name":"Sunglasses",
         "image":"assets/images/sunglasses.png", 
-        "price" :"460000 mmk",
+        "price" :460000,
         "code" :"200"
     },
     {
         "id" :19,
         "name":"Hat",
        "image":"assets/images/cap.png",
-       "price" :"65000 mmk",
+       "price" :65000,
         "code" :"201"
     },
     {
         "id" :20,
         "name":"Ring",
         "image":"assets/images/ring.png",
-        "price" :"300000 mmk",
+        "price" :300000,
         "code" :"100"
     },
     {
         "id" :21,
         "name":"Earring",
         "image":"assets/images/earrings.png",
-        "price" :"400000 mmk",
+        "price" :400000,
         "code" :"101"
     },
     {
         "id" :22,
         "name":"Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"720000 mmk",
+        "price" :720000,
         "code" :"102"
     },
     {
         "id" :23,
         "name":"Diamond Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"7500000 mmk",
+        "price" :7500000,
         "code" :"103"
     },
     {
         "id" :24,
         "name":"Jade Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"500000 mmk",
+        "price" :500000,
         "code" :"104"
     },
     {
         "id" :25,
         "name":"Gold Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"840000 mmk",
+        "price" :840000,
         "code" :"105"
     },
     {
         "id" :26,
         "name":"Diamond Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"6380000 mmk",
+        "price" :6380000,
         "code" :"106"
     },
     {
         "id" :27,
         "name":"Platinum Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"350000 mmk",
+        "price" :350000,
         "code" :"107"
     },
     {
         "id" :28,
         "name":"Gold Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"650000 mmk",
+        "price" :650000,
         "code" :"108"
     },
     {
         "id" :29,
         "name":"Shoe",
         "image":"assets/images/timberland.png",
-        "price" :"350000 mmk",
+        "price" :350000,
         "code" :"205"
     },
     {
         "id" :30,
         "name":"Sneaker",
         "image":"assets/images/timberland.png",
-        "price" :"420000 mmk",
+        "price" :420000,
         "code" :"206"
     },
     {
         "id" :31,
         "name":"Perfume",
         "image":"assets/images/skincare.png",
-        "price" :"256300 mmk",
+        "price" :256300,
         "code" :"207"
     },
     {
         "id" :32,
         "name":"Necktie",
         "image":"assets/images/necktie.png",
-        "price" :"321000 mmk",
+        "price" :321000,
         "code" :"208"
     },{
         "id" :33,
         "name":"Ring",
         "image":"assets/images/ring.png",
-        "price" :"1800000 mmk",
+        "price" :1800000,
         "code" :"100"
     },
     {
         "id" :34,
         "name":"Earring",
         "image":"assets/images/earrings.png",
-        "price" :"1800000 mmk",
+        "price" :1800000,
         "code" :"101"
     },
     {
         "id" :35,
         "name":"Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"1800000 mmk",
+        "price" :1800000,
         "code" :"102"
     },
     {
         "id" :36,
         "name":"DM",
        "image":"assets/images/dm.png",
-        "price" :"180000 mmk",
+        "price" :180000,
         "code" :"110"
     },
     {
         "id" :37,
         "name":"MK",
         "image":"assets/images/dm.png",
-        "price" :"250000 mmk",
+        "price" :250000,
         "code" :"111"
     },
     {
         "id" :38,
         "name":"AC",
         "image":"assets/images/dm.png", 
-        "price" :"200000 mmk",
+        "price" :200000,
         "code" :"112"
     },
     {
         "id" :39,
         "name":"Trofish",
         "image":"assets/images/dm.png",
-        "price" :"700000 mmk",
+        "price" :700000,
         "code" :"113"
     },
     {
         "id" :40,
         "name":"Rolex",
         "image":"assets/images/dm.png",
-        "price" :"14000000 mmk",
+        "price" :14000000,
         "code" :"114"
     },
     {
         "id" :41,
         "name":"Romanson",
         "image":"assets/images/dm.png",
-        "price" :"8000000 mmk",
+        "price" :8000000,
         "code" :"115"
     },
     {
         "id" :42,
         "name":"Omega",
         "image":"assets/images/dm.png",
-        "price" :"900000 mmk",
+        "price" :900000,
         "code" :"116"
     },
     {
         "id" :43,
         "name":"Apple Watch",
         "image":"assets/images/dm.png",
-        "price" :"1800000 mmk",
+        "price" :1800000,
         "code" :"117"
     },
     {
         "id" :44,
         "name":"Samsung Smart Watch",
         "image":"assets/images/dm.png",
-        "price" :"900000 mmk",
+        "price" :900000,
         "code" :"118"
     }, {
         "id" :45,
         "name":"Lilly",
         "image":"assets/images/lilly.png",
-        "price" :"54000 mmk",
+        "price" :54000,
         "code" :"120"
     },
     {
         "id" :46,
         "name":"Timberland",
         "image":"assets/images/timberland.png",
-        "price" :"600000 mmk",
+        "price" :600000,
         "code" :"121"
     },
     {
         "id" :47,
         "name":"Flipflop",
         "image":"assets/images/flipflops.png",
-        "price" :"250000 mmk",
+        "price" :250000,
         "code" :"122"
     }
     ,
@@ -337,7 +336,7 @@
         "id" :48,
         "name":"Erk",
         "image":"assets/images/timberland.png",
-        "price" :"89200 mmk",
+        "price" :89200,
         "code" :"123"
     }
     ,
@@ -345,7 +344,7 @@
         "id" :49,
         "name":"Penshoppe",
         "image":"assets/images/timberland.png",
-        "price" :"120000 mmk",
+        "price" :120000,
         "code" :"124"
     }
     ,
@@ -353,7 +352,7 @@
         "id" :50,
         "name":"Sketchers",
         "image":"assets/images/timberland.png",
-        "price" :"90000 mmk",
+        "price" :90000,
         "code" :"125"
     }
     ,
@@ -361,7 +360,7 @@
         "id" :51,
         "name":"New Balance",
         "image":"assets/images/timberland.png",
-        "price" :"300000 mmk",
+        "price" :300000,
         "code" :"126"
     }
     ,
@@ -369,7 +368,7 @@
         "id" :52,
         "name":"Yeezy",
         "image":"assets/images/timberland.png",
-        "price" :"800000 mmk",
+        "price" :800000,
         "code" :"127"
     }
     ,
@@ -377,7 +376,7 @@
         "id" :53,
         "name":"Ripples",
         "image":"assets/images/flipflops.png",
-        "price" :"36000 mmk",
+        "price" :36000,
         "code" :"128"
     }
 ]

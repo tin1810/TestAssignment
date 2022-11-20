@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:test_assignment/model/jewellery_model.dart';
+
 import 'package:test_assignment/model/product_model.dart';
 import 'package:test_assignment/model/shop_model.dart';
 import 'package:test_assignment/widget/filter_widget.dart';
@@ -47,9 +47,6 @@ class ShopController extends GetxController {
     super.onClose();
   }
 
-  // void loadDetailInfos(int categoryId) {
-  //   categoryList;
-  // }
   Future<List<ShopModel>> loadShop() async {
     final jsonData = await rootBundle.loadString("assets/json/shop.json");
     final shopList = json.decode(jsonData) as List<dynamic>;
@@ -72,9 +69,6 @@ class ShopController extends GetxController {
   }
 
   Future<List<ProductModel>> loadMan() async {
-    issortProduct.value == true;
-    issortPrice.value = true;
-
     final jsonData =
         await rootBundle.loadString("assets/json/man_product.json");
     final man = json.decode(jsonData) as List<dynamic>;
@@ -153,15 +147,6 @@ class ShopController extends GetxController {
     return productsortList.map((e) => ProductModel.fromJson(e)).toList();
   }
 
-  // Future<List<JewelleryModel>> loadJewellery() async {
-  //   final jsonData =
-  //       await rootBundle.loadString("assets/json/jewellery_product.json");
-  //   final jewelleryList = json.decode(jsonData) as List<dynamic>;
-  //   print(jewelleryList);
-  //   jewelleryList.sort((a, b) => b.compareTo(a));
-  //   return jewelleryList.map((e) => JewelleryModel.fromJson(e)).toList();
-  // }
-
   void sortProductList(List<ProductModel> list) {
     list.sort((a, b) => issortProduct.value
         ? a.name!.compareTo(b.toString())
@@ -171,26 +156,22 @@ class ShopController extends GetxController {
 
   void sortPriceList(List<ProductModel> list) {
     list.sort((a, b) => issortPrice.value
-        ? a.price!.compareTo(b.toString())
-        : b.price!.compareTo(a.toString()));
+        ? a.price.toString().compareTo(b.price.toString())
+        : b.price.toString().compareTo(a.price.toString()));
     issortPrice.value == true;
   }
-  // void sort2(List list) {
-  //   list.sort((a, b) => isSort2.value ? a.compareTo(b) : b.compareTo(a));
-  //   isSort2.value == true;
-  // }
 
-  Future<dynamic> bottomSheet(context) {
-    return showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.white,
-      elevation: 10,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      builder: (BuildContext context) {
-        return filterWidget();
-      },
-    );
-  }
+  // Future<dynamic> bottomSheet(context) {
+  //   return showModalBottomSheet(
+  //     context: context,
+  //     backgroundColor: Colors.white,
+  //     elevation: 10,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(10.0),
+  //     ),
+  //     builder: (BuildContext context) {
+  //       return filterWidget();
+  //     },
+  //   );
+  // }
 }

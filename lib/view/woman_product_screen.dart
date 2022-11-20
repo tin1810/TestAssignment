@@ -51,7 +51,6 @@ class _WomanProductScreenState extends State<WomanProductScreen> {
                           setState(() {
                             shopController.issortPrice.value =
                                 !shopController.issortPrice.value;
-                            shopController.sortPriceList(snapshot.data!);
                           });
                         },
                         icon: const Icon(
@@ -63,7 +62,6 @@ class _WomanProductScreenState extends State<WomanProductScreen> {
                           setState(() {
                             shopController.issortProduct.value =
                                 !shopController.issortProduct.value;
-                            shopController.sortProductList(snapshot.data!);
                           });
                           // shopController.sortProductList(snapshot.data!);
                           // shopController.issortProduct
@@ -80,52 +78,11 @@ class _WomanProductScreenState extends State<WomanProductScreen> {
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  Flexible(
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        reverse: shopController.issortProduct.value,
-                        itemCount: shopController.woman.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                              left: 10,
-                              right: 10,
-                              top: 10,
-                            ),
-                            height: 100,
-                            width: 100,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(color: backgroundColor),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Image.asset(shopController.woman[index].image
-                                    .toString()),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    productName(
-                                      shopController.woman[index].name
-                                          .toString(),
-                                    ),
-                                    price(
-                                      shopController.woman[index].price
-                                          .toString(),
-                                    ),
-                                    productCode(
-                                      shopController.woman[index].code
-                                          .toString(),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
+                  shopController.issortProduct.value == true
+                      ? woman(shopController)
+                      : shopController.issortPrice.value == true
+                          ? woman1(shopController)
+                          : womanNew(shopController),
                   SizedBox(
                     height: 20,
                   )
@@ -134,6 +91,148 @@ class _WomanProductScreenState extends State<WomanProductScreen> {
             }
             return const Center(
               child: CircularProgressIndicator(),
+            );
+          }),
+    );
+  }
+
+  Widget woman(ShopController shopController) {
+    return Flexible(
+      child: ListView.builder(
+          shrinkWrap: true,
+          reverse: shopController.issortProduct.value,
+          itemCount: shopController.woman.length,
+          itemBuilder: (context, index) {
+            final sortedItems = shopController.woman.sort((item1, item2) =>
+                shopController.issortProduct.value
+                    ? item1.name.toString().compareTo(item2.name.toString())
+                    : item2.name.toString().compareTo(item1.name.toString()));
+            final item = sortedItems;
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.woman[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.woman[index].name.toString(),
+                      ),
+                      price(
+                        shopController.woman[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.woman[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
+  }
+
+  Widget woman1(ShopController shopController) {
+    return Flexible(
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: shopController.woman.length,
+          itemBuilder: (context, index) {
+            final sortedItems1 = shopController.woman.sort((items1, items2) =>
+                shopController.issortPrice.value
+                    ? items1.price.toString().compareTo(items2.price.toString())
+                    : items2.price
+                        .toString()
+                        .compareTo(items1.price.toString()));
+            final items = sortedItems1;
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.woman[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.woman[index].name.toString(),
+                      ),
+                      price(
+                        shopController.woman[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.woman[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
+  }
+
+  Widget womanNew(ShopController shopController) {
+    return Flexible(
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: shopController.woman.length,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.woman[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.woman[index].name.toString(),
+                      ),
+                      price(
+                        shopController.woman[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.woman[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             );
           }),
     );

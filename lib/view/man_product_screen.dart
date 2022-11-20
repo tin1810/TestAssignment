@@ -54,9 +54,7 @@ class _ManProductScreenState extends State<ManProductScreen> {
                           setState(() {
                             shopController.issortPrice.value =
                                 !shopController.issortPrice.value;
-                            shopController.sortPriceList(snapshot.data!);
                           });
-                          // shopController.sortProductList(snapshot.data!);
                         },
                         icon: const Icon(
                           Icons.money,
@@ -67,12 +65,8 @@ class _ManProductScreenState extends State<ManProductScreen> {
                           setState(() {
                             shopController.issortProduct.value =
                                 !shopController.issortProduct.value;
-                            shopController.sortProductList(snapshot.data!);
                           });
-                          // shopController.sortProductList(snapshot.data!);
-                          // shopController.issortProduct
-                          // snapshot.data!
-                          //     .sort((a, b) => a.name!.compareTo(b.name!));
+                          // shopController.sortProductList
                         },
                         icon: const Icon(
                           Icons.sort,
@@ -84,14 +78,11 @@ class _ManProductScreenState extends State<ManProductScreen> {
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-                  manList(shopController),
-// (foo==1)? something1():(foo==2)? something2(): something3();
-
-                  // shopController.issortProduct.value == true
-                  //     ? manList(shopController)
-                  //     : shopController.issortPrice.value == true
-                  //         ? manList1(shopController)
-                  //         : manList2(shopController),
+                  shopController.issortProduct.value == true
+                      ? manList(shopController)
+                      : shopController.issortPrice.value == true
+                          ? manList1(shopController)
+                          : manListNew(shopController),
                   SizedBox(
                     height: 20,
                   )
@@ -105,7 +96,7 @@ class _ManProductScreenState extends State<ManProductScreen> {
     );
   }
 
-  Widget manList2(ShopController shopController) {
+  Widget manListNew(ShopController shopController) {
     return Flexible(
       child: ListView.builder(
           // reverse: shopController.issortProduct.value,
@@ -160,6 +151,11 @@ class _ManProductScreenState extends State<ManProductScreen> {
           // itemCount: shopController
           //     .shop[0].category![0].productName!.length,
           itemBuilder: (context, index) {
+            final sortedItems = shopController.man.sort((item1, item2) =>
+                shopController.issortProduct.value
+                    ? item1.name.toString().compareTo(item2.name.toString())
+                    : item2.name.toString().compareTo(item1.name.toString()));
+            final item = sortedItems;
             return Container(
               margin: EdgeInsets.only(
                 left: 10,
@@ -200,12 +196,19 @@ class _ManProductScreenState extends State<ManProductScreen> {
   Widget manList1(ShopController shopController) {
     return Flexible(
       child: ListView.builder(
-          reverse: shopController.issortPrice.value,
+          // reverse: shopController.issortPrice.value,
           shrinkWrap: true,
           itemCount: shopController.man.length,
           // itemCount: shopController
           //     .shop[0].category![0].productName!.length,
           itemBuilder: (context, index) {
+            final sortedItems1 = shopController.man.sort((items1, items2) =>
+                shopController.issortPrice.value
+                    ? items1.price.toString().compareTo(items2.price.toString())
+                    : items2.price
+                        .toString()
+                        .compareTo(items1.price.toString()));
+            final items = sortedItems1;
             return Container(
               margin: EdgeInsets.only(
                 left: 10,

@@ -50,7 +50,7 @@ class _ShoeProductScreenState extends State<ShoeProductScreen> {
                           setState(() {
                             shopController.issortPrice.value =
                                 !shopController.issortPrice.value;
-                            shopController.sortPriceList(snapshot.data!);
+                            // shopController.sortPriceList(snapshot.data!);
                           });
                           // shopController.sortProductList(snapshot.data!);
                         },
@@ -63,7 +63,7 @@ class _ShoeProductScreenState extends State<ShoeProductScreen> {
                           setState(() {
                             shopController.issortProduct.value =
                                 !shopController.issortProduct.value;
-                            shopController.sortProductList(snapshot.data!);
+                            // shopController.sortProductList(snapshot.data!);
                           });
                           // shopController.sortProductList(snapshot.data!);
                           // shopController.issortProduct
@@ -80,9 +80,11 @@ class _ShoeProductScreenState extends State<ShoeProductScreen> {
                     endIndent: 10,
                     color: Colors.grey,
                   ),
-
-                  // shopController.issortProduct.value == true? 
-                  shop(shopController),
+                  shopController.issortProduct.value == true
+                      ? shoe(shopController)
+                      : shopController.issortPrice.value == true
+                          ? shoe1(shopController)
+                          : shoeNew(shopController),
                   SizedBox(
                     height: 20,
                   )
@@ -96,52 +98,146 @@ class _ShoeProductScreenState extends State<ShoeProductScreen> {
     );
   }
 
-  Widget shop(ShopController shopController) {
+  Widget shoe(ShopController shopController) {
     return Flexible(
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      reverse: shopController.issortProduct.value  ,
-                      itemCount: shopController.shoe.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.only(
-                            left: 10,
-                            right: 10,
-                            top: 10,
-                          ),
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: backgroundColor),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset(shopController.shoe[index].image
-                                  .toString()),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  productName(
-                                    shopController.shoe[index].name
-                                        .toString(),
-                                  ),
-                                  price(
-                                    shopController.shoe[index].price
-                                        .toString(),
-                                  ),
-                                  productCode(
-                                    shopController.shoe[index].code
-                                        .toString(),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
-                );
+      child: ListView.builder(
+          shrinkWrap: true,
+          // reverse: shopController.issortProduct.value,
+          itemCount: shopController.shoe.length,
+          itemBuilder: (context, index) {
+            final sortedItems = shopController.shoe.sort((item1, item2) =>
+                shopController.issortProduct.value
+                    ? item1.name.toString().compareTo(item2.name.toString())
+                    : item2.name.toString().compareTo(item1.name.toString()));
+            final item = sortedItems;
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.shoe[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.shoe[index].name.toString(),
+                      ),
+                      price(
+                        shopController.shoe[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.shoe[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
   }
+
+  Widget shoe1(ShopController shopController) {
+    return Flexible(
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: shopController.shoe.length,
+          itemBuilder: (context, index) {
+            final sortedItems1 = shopController.shoe.sort((items1, items2) =>
+                shopController.issortPrice.value
+                    ? items1.price.toString().compareTo(items2.price.toString())
+                    : items2.price
+                        .toString()
+                        .compareTo(items1.price.toString()));
+            final items = sortedItems1;
+            return Container(
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: backgroundColor),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(shopController.shoe[index].image.toString()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      productName(
+                        shopController.shoe[index].name.toString(),
+                      ),
+                      price(
+                        shopController.shoe[index].price.toString(),
+                      ),
+                      productCode(
+                        shopController.shoe[index].code.toString(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
+  }
+}
+
+Widget shoeNew(ShopController shopController) {
+  return Flexible(
+    child: ListView.builder(
+        shrinkWrap: true,
+        // reverse: shopController.issortProduct.value,
+        itemCount: shopController.shoe.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: EdgeInsets.only(
+              left: 10,
+              right: 10,
+              top: 10,
+            ),
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: backgroundColor),
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset(shopController.shoe[index].image.toString()),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    productName(
+                      shopController.shoe[index].name.toString(),
+                    ),
+                    price(
+                      shopController.shoe[index].price.toString(),
+                    ),
+                    productCode(
+                      shopController.shoe[index].code.toString(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }),
+  );
 }

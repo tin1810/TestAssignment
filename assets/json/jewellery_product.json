@@ -4,63 +4,63 @@
         "id" :0,
         "name":"Ring",
         "image":"assets/images/ring.png",
-        "price" :"300000 mmk",
+        "price" :300000,
         "code" :"100"
     },
     {
         "id" :1,
         "name":"Earring",
         "image":"assets/images/earrings.png",
-        "price" :"400000 mmk",
+        "price" :400000,
         "code" :"101"
     },
     {
         "id" :2,
         "name":"Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"720000 mmk",
+        "price" :720000,
         "code" :"102"
     },
     {
         "id" :3,
         "name":"Diamond Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"7500000 mmk",
+        "price" :7500000,
         "code" :"103"
     },
     {
         "id" :4,
         "name":"Jade Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"500000 mmk",
+        "price" :500000,
         "code" :"104"
     },
     {
         "id" :5,
         "name":"Gold Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"840000 mmk",
+        "price" :840000,
         "code" :"105"
     },
     {
         "id" :6,
         "name":"Diamond Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"6380000 mmk",
+        "price" :6380000,
         "code" :"106"
     },
     {
         "id" :7,
         "name":"Platinum Bracelet",
         "image":"assets/images/bracelet.png",
-        "price" :"350000 mmk",
+        "price" :350000,
         "code" :"107"
     },
     {
         "id" :8,
         "name":"Gold Necklace",
         "image":"assets/images/necklace.png",
-        "price" :"650000 mmk",
+        "price" :650000,
         "code" :"108"
     }
 ]
