@@ -7,9 +7,14 @@ import 'package:test_assignment/utils/constant.dart';
 import 'package:test_assignment/view/search_screen.dart';
 import 'package:test_assignment/widget/titleText_widget.dart';
 
-class WomanProductScreen extends GetView<ShopController> {
+class WomanProductScreen extends StatefulWidget {
   const WomanProductScreen({super.key});
 
+  @override
+  State<WomanProductScreen> createState() => _WomanProductScreenState();
+}
+
+class _WomanProductScreenState extends State<WomanProductScreen> {
   @override
   Widget build(BuildContext context) {
     final shopController = Get.put(ShopController());
@@ -43,8 +48,11 @@ class WomanProductScreen extends GetView<ShopController> {
                   ListTile(
                     leading: IconButton(
                         onPressed: () {
-                          snapshot.data!
-                              .sort((a, b) => a.price!.compareTo(b.price!));
+                          setState(() {
+                            shopController.issortPrice.value =
+                                !shopController.issortPrice.value;
+                            shopController.sortPriceList(snapshot.data!);
+                          });
                         },
                         icon: const Icon(
                           Icons.money,
@@ -52,10 +60,20 @@ class WomanProductScreen extends GetView<ShopController> {
                         )),
                     trailing: IconButton(
                         onPressed: () {
-                          snapshot.data!
-                              .sort((a, b) => a.name!.compareTo(b.name!));
+                          setState(() {
+                            shopController.issortProduct.value =
+                                !shopController.issortProduct.value;
+                            shopController.sortProductList(snapshot.data!);
+                          });
+                          // shopController.sortProductList(snapshot.data!);
+                          // shopController.issortProduct
+                          // snapshot.data!
+                          //     .sort((a, b) => a.name!.compareTo(b.name!));
                         },
-                        icon: const Icon(Icons.list)),
+                        icon: const Icon(
+                          Icons.sort,
+                          color: Colors.black,
+                        )),
                   ),
                   const Divider(
                     indent: 10,
@@ -65,6 +83,7 @@ class WomanProductScreen extends GetView<ShopController> {
                   Flexible(
                     child: ListView.builder(
                         shrinkWrap: true,
+                        reverse: shopController.issortProduct.value,
                         itemCount: shopController.woman.length,
                         itemBuilder: (context, index) {
                           return Container(

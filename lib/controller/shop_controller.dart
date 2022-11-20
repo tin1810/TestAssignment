@@ -169,6 +169,12 @@ class ShopController extends GetxController {
     issortProduct.value == true;
   }
 
+  void sortPriceList(List<ProductModel> list) {
+    list.sort((a, b) => issortPrice.value
+        ? a.price!.compareTo(b.toString())
+        : b.price!.compareTo(a.toString()));
+    issortPrice.value == true;
+  }
   // void sort2(List list) {
   //   list.sort((a, b) => isSort2.value ? a.compareTo(b) : b.compareTo(a));
   //   isSort2.value == true;

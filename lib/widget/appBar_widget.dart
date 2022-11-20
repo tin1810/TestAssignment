@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_assignment/controller/auth_controller.dart';
 import 'package:test_assignment/utils/constant.dart';
-import 'package:test_assignment/view/profile_screen.dart';
 
 Widget appBar(String email) {
   return AppBar(
